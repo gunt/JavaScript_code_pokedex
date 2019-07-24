@@ -34,9 +34,15 @@ var repository = [
         types: ['fire']  
     },
 
+];
 
+//  Remembering Loops
+// var ages = [20, 30, 25, 22, 31];
+// for (var i = 0; i < ages.length; i++) {
+//   console.log(ages[i] - 2);
+// }
 
-
-
-
-]
+// for loop = three different parts: 
+// 1.  initialization, (var i = 1), 
+// 2.  the condition (i <= 100),
+// 3.  the action (i++). 
