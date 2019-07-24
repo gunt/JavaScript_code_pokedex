@@ -56,14 +56,12 @@ var repository = [
 
 for (var i = 0; i < repository.length; i++) {
 
-    var pokemon = repository[i]; 
-    
-
-    // document.write("pokemon.name:" , i, repository[i])
+    // changing the variable to make it shorter
+    var poke = repository[i]; 
 
     if (repository[i].height > 7)  {
-        document.write ('<p>' + pokemon.name + "Wow, that’s big!" + pokemon.height + '<p>');
+        document.write ('<p> ' + poke.name + '  ' + "Wow, that’s big!" + poke.height + '<p>');
     }   else {
-        document.write ('<p>' + pokemon.name + pokemon.height + '<p>')
+        document.write ('<p>' + poke.name + poke.height + '<p>')
         }
 }
