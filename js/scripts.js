@@ -46,3 +46,23 @@ var repository = [
 // 1.  initialization, (var i = 1), 
 // 2.  the condition (i <= 100),
 // 3.  the action (i++). 
+
+//  *Assigning variables = readability
+//  *HTML within a string in JavaScript 
+
+
+
+
+
+for (var i = 0; i < repository.length; i++) {
+
+    var pokemon = repository[i];
+
+    document.write("pokemon.name:" , i, repository[i])
+
+    if (repository[i].height === 7)  {
+        document.write ('<p>' + pokemon.name + "Wow, that’s big!" + pokemon.height + '<p>');
+    }   else {
+        document.write ('<p>' + pokemon.name + pokemon.height + '<p>')
+        }
+}
