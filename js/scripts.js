@@ -19,19 +19,19 @@ var repository = [
     {
         name: "Talonflame",
         height: 3.11,
-        types: ['fire', 'flying']  
+        types: ['fire', 'flying']
     },
 
     {
         name: "Buzzwole",
         height: 7.10,
-        types: ['bug', 'fighting']  
+        types: ['bug', 'fighting']
     },
 
     {
         name: "Entei",
         height: 6.11,
-        types: ['fire']  
+        types: ['fire']
     },
 
 ];
@@ -57,11 +57,12 @@ var repository = [
 for (var i = 0; i < repository.length; i++) {
 
     // changing the variable to make it shorter
-    var poke = repository[i]; 
+    var poke = repository[i];
 
-    if (repository[i].height > 7)  {
-        document.write ('<p> ' + poke.name + '  ' + "Wow, that’s big!" + poke.height + '<p>');
-    }   else {
-        document.write ('<p>' + poke.name + poke.height + '<p>')
-        }
+    if (poke.height > 7) {
+        document.write('<p> ' + poke.name + 
+        ' (height: ' + poke.height + ') - Wow, that’s big!' + '<p>');
+    } else {
+        document.write('<p> ' + ' ' + poke.name + ': ' + ' ' + poke.height + '<p>')
+    }
 }
