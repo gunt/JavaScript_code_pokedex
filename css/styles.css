@@ -200,11 +200,11 @@ button:hover, button:focus {
 }
 
 /* Button new Advanced */
-button,
+/* button,
 .button1,
 .button2,
 .button3,
-.my-input {}
+.my-input {} */
 
 .button, button {
   border: none;
