@@ -53,6 +53,7 @@ for (var i = 0; i < repository.length; i++) {
         document.write('<p> ' + poke.name + 
         ' (height: ' + poke.height + ') - Wow, that’s big!' + '<p>');
     } else {
-        document.write('<p> ' + ' ' + poke.name + ': ' + ' ' + poke.height + '<p>')
+        document.write('<p> ' + poke.name + 
+        ' (height: ' + poke.height + ') ' + '<p>')
     }
 }
