@@ -26,7 +26,7 @@ var repository = [
         height: 6.11,
         types: ['fire']
     },
-    
+
 ];
 
 //  Remembering Loops
@@ -50,10 +50,10 @@ for (var i = 0; i < repository.length; i++) {
     var poke = repository[i];
 
     if (poke.height > 7) {
-        document.write('<p> ' + poke.name + 
-        ' (height: ' + poke.height + ') - Wow, that’s big!' + '<p>');
+        document.write('<p> ' + poke.name +
+            ' (height: ' + poke.height + ') - Wow, that’s big!' + '<p>');
     } else {
-        document.write('<p> ' + poke.name + 
-        ' (height: ' + poke.height + ') ' + '<p>')
+        document.write('<p> ' + poke.name +
+            ' (height: ' + poke.height + ') ' + '<p>')
     }
 }
