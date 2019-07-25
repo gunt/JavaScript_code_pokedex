@@ -1,10 +1,3 @@
-// var mixedArray = [
-//     1,
-//     'two',
-//     numberArray,
-//     { age: 5 }
-//   ];
-
 //  1. Everything between the curly braces makes up the object.
 //  2. variable called repository and assign it to be an array.
 //  3. Several objects to the array - Each object represents one 
@@ -33,7 +26,7 @@ var repository = [
         height: 6.11,
         types: ['fire']
     },
-
+    
 ];
 
 //  Remembering Loops
@@ -51,12 +44,9 @@ var repository = [
 //  *HTML within a string in JavaScript 
 
 
-
-
-
 for (var i = 0; i < repository.length; i++) {
 
-    // changing the variable to make it shorter
+    // changing the variable to make it shorter (Readability)
     var poke = repository[i];
 
     if (poke.height > 7) {
