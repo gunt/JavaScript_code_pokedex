@@ -1,13 +1,3 @@
-
-//  1. Everything between the curly braces makes up the object.
-//  2. variable called repository and assign it to be an array.
-//  3. Several objects to the array - Each object represents one 
-//  Pokémon and needs to have the same keys to avoid errors. 
-//  three keys to each pokemon. name, height, types
-//  Create at least three Pokémon objects in your repository array.
-//  Object: {}
-//  Array:  []
-
 var repository = [
 
     {
@@ -31,8 +21,6 @@ var repository = [
 ];
 
 //Part 2: forEach Loops
-repository.forEach(function(property){
-  document.write('<p> ' + property.name + ':' + '  ' + property.height + ' - ' + property.types + '</p>');
+repository.forEach(function (property) {
+    document.write('<p> ' + property.name + ':' + '  ' + property.height + ' - ' + property.types + '</p>');
 });
-
-
