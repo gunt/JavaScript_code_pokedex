@@ -30,31 +30,36 @@ var repository = [
 
 ];
 
-//  Remembering Loops
-// var ages = [20, 30, 25, 22, 31];
-// for (var i = 0; i < ages.length; i++) {
-//   console.log(ages[i] - 2);
+
+// for (var i = 0; i < repository.length; i++) {
+
+//     // changing the variable to make it shorter (Readability)
+//     var poke = repository[i];
+
+//     if (poke.height > 7) {
+//         document.write('<p> ' + poke.name +
+//             ' (height: ' + poke.height + ') - Wow, that’s big!' + '<p>');
+//     } else {
+//         document.write('<p> ' + poke.name +
+//             ' (height: ' + poke.height + ') ' + '<p>')
+//     }
 // }
 
-// for loop = three different parts: 
-// 1.  initialization, (var i = 1), 
-// 2.  the condition (i <= 100),
-// 3.  the action (i++). 
 
-//  *Assigning variables = readability
-//  *HTML within a string in JavaScript 
+// var foodList = ['tuna', 'cheese', 'salad'];
+                 
+// document.write('<h3>===forEach LOOP===</h3>');
+// foodList.forEach(function(currentItem){
+//   document.write('<p>' + currentItem + '</p>');
+// });
 
 
-for (var i = 0; i < repository.length; i++) {
 
-    // changing the variable to make it shorter (Readability)
-    var poke = repository[i];
+repository.forEach(function(property){
+  document.write('<p> ' + property.name + ':' +' ' + property.types + '</p>');
+});
 
-    if (poke.height > 7) {
-        document.write('<p> ' + poke.name +
-            ' (height: ' + poke.height + ') - Wow, that’s big!' + '<p>');
-    } else {
-        document.write('<p> ' + poke.name +
-            ' (height: ' + poke.height + ') ' + '<p>')
-    }
-}
+
+// Object.keys(anne).forEach(function(property) {
+//     console.log(anne[property]);
+//   });
