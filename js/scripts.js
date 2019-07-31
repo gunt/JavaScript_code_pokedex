@@ -56,7 +56,7 @@ var repository = [
 
 
 repository.forEach(function(property){
-  document.write('<p> ' + property.name + ':' +' ' + property.types + '</p>');
+  document.write('<p> ' + property.name + ':' + '  ' + property.height + ' - ' + property.types + '</p>');
 });
 
 
