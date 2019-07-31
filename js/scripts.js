@@ -30,36 +30,9 @@ var repository = [
 
 ];
 
-
-// for (var i = 0; i < repository.length; i++) {
-
-//     // changing the variable to make it shorter (Readability)
-//     var poke = repository[i];
-
-//     if (poke.height > 7) {
-//         document.write('<p> ' + poke.name +
-//             ' (height: ' + poke.height + ') - Wow, that’s big!' + '<p>');
-//     } else {
-//         document.write('<p> ' + poke.name +
-//             ' (height: ' + poke.height + ') ' + '<p>')
-//     }
-// }
-
-
-// var foodList = ['tuna', 'cheese', 'salad'];
-                 
-// document.write('<h3>===forEach LOOP===</h3>');
-// foodList.forEach(function(currentItem){
-//   document.write('<p>' + currentItem + '</p>');
-// });
-
-
-
+//Part 2: forEach Loops
 repository.forEach(function(property){
   document.write('<p> ' + property.name + ':' + '  ' + property.height + ' - ' + property.types + '</p>');
 });
 
 
-// Object.keys(anne).forEach(function(property) {
-//     console.log(anne[property]);
-//   });
