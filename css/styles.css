@@ -48,6 +48,31 @@ h3 {
   font-weight: var(--h-font-weight);
 }
 
+.main-content {
+  padding: 10%;
+  flex: 1 1 80%;
+  min-height: 100vh;
+
+}
+
+.portfolio {
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+.portfolio-item {
+  background: $accent;
+  color: $light-gray;
+  font-weight: $font-bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
 .profile__text {
   flex: 1 1 100px;
 }
