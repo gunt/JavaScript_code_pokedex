@@ -43,9 +43,22 @@ var repository = [
 ];
 
 // recode - wrap your code to a IIFE // the same but with the clean code // last paragraph
+// organize the code according to task
+
+function add(pokemon) {
+          repository.push(pokemon);
+        }
+
 function getAll() {
     return repository;
 }
+
+return {
+          add: add,
+          getAll: getAll
+        };
+      })();
+    
 
 //Part 2: forEach Loops // 
 repository.forEach(function (property) {
