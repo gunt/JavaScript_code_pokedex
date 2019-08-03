@@ -17,7 +17,9 @@
 //     };
 //   })();
 
-
+// creating before anything else a new pokemonRepository variable
+//Step 2: is Inside no need to do it again. 
+var pokemonRepository = (function () {
 var repository = [
 
     {
@@ -40,12 +42,12 @@ var repository = [
 
 ];
 
-// recode - wrap your code to a IIFE
+// recode - wrap your code to a IIFE // the same but with the clean code // last paragraph
 function getAll() {
     return repository;
 }
 
-//Part 2: forEach Loops
+//Part 2: forEach Loops // 
 repository.forEach(function (property) {
     document.write('<p> ' + property.name + ':' + '  ' + property.height + ' - ' + property.types + '</p>');
 });
