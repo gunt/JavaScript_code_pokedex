@@ -1,3 +1,23 @@
+
+
+// var pokemonRepository = (function () {
+//     var repository = [];
+  
+//     function add(pokemon) {
+//       repository.push(pokemon);
+//     }
+  
+//     function getAll() {
+//       return repository;
+//     }
+  
+//     return {
+//       add: add,
+//       getAll: getAll
+//     };
+//   })();
+
+
 var repository = [
 
     {
@@ -19,6 +39,11 @@ var repository = [
     },
 
 ];
+
+// recode - wrap your code to a IIFE
+function getAll() {
+    return repository;
+}
 
 //Part 2: forEach Loops
 repository.forEach(function (property) {
