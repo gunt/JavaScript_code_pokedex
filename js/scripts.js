@@ -68,7 +68,7 @@ pokemonRepository.add({
 // console.log(pokemonRepository.getAll()); instead
 pokemonRepository.getAll().forEach(function (pokemon) {
     if (pokemon.height > 7) {
-        document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ') Wow, that\'s big!' + '</p>');
+        document.write('<p id="pokeH-style"> ' + pokemon.name + ' (height: ' + pokemon.height + ') Wow, that\'s big!' + '</p>');
     } else {
         document.write('<p> ' + pokemon.name + ':' + '  ' + pokemon.height + ' - ' + pokemon.types + '</p>');
     }
