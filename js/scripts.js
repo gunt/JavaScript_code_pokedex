@@ -1,20 +1,3 @@
-// var pokemonRepository = (function () {
-//     var repository = [];
-
-//     function add(pokemon) {
-//       repository.push(pokemon);
-//     }
-
-//     function getAll() {
-//       return repository;
-//     }
-
-//     return {
-//       add: add,
-//       getAll: getAll
-//     };
-//   })();
-
 // creating before anything else a new pokemonRepository variable
 //Step 2: is Inside no need to do it again. 
 var pokemonRepository = (function () {
