@@ -55,6 +55,8 @@ pokemonRepository.add({
 });
 
 
+var $pokemonList = document.querySelector('.pokemonList');
+
 //Part 2: forEach Loops // 
 // console.log(pokemonRepository.getAll()); instead
 pokemonRepository.getAll().forEach(function (pokemon) {
