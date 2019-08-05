@@ -40,11 +40,14 @@ var pokemonRepository = (function () {
 
     ];
 
-    // recode - wrap your code to a IIFE // the same but with the clean code // last paragraph
-    // organize the code according to task
-
     function add(pokemon) {
-        repository.push(pokemon);
+        document.write(typeof repository);
+        if (typeof repository === 'string') {
+            repository.push(pokemon)
+        } else {
+            document.write('Is not string');
+        }
+
     }
 
     function getAll() {
@@ -57,12 +60,12 @@ var pokemonRepository = (function () {
     };
 })();
 
-
 pokemonRepository.add({
     name: 'Pikachu',
     height: 1.4,
     types: ['electric']
 });
+
 
 //Part 2: forEach Loops // 
 // console.log(pokemonRepository.getAll()); instead
