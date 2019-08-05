@@ -41,11 +41,11 @@ var pokemonRepository = (function () {
     ];
 
     function add(pokemon) {
-        document.write(typeof repository);
-        if (typeof repository === 'string') {
+        // document.write(typeof repository);
+        if (typeof repository === 'object') {
             repository.push(pokemon)
         } else {
-            document.write('Is not string');
+            document.write('Is not an Object');
         }
 
     }
