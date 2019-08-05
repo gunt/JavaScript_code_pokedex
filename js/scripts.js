@@ -23,6 +23,11 @@ var pokemonRepository = (function () {
 
     ];
 
+
+    // recode - wrap your code to a IIFE // the same but with the clean code // last paragraph
+    // organize the code according to task
+    // Bonus task, inside the add funcion /// typeof parameter is an object with a conditional
+
     function add(pokemon) {
         // document.write(typeof repository);
         if (typeof repository === 'object') {
