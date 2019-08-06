@@ -55,12 +55,19 @@ pokemonRepository.add({
 });
 
 
-var $pokemonList = document.querySelector('.pokemonList');
+var $pokemonList = document.querySelector('.pokemon-list');
+
+
 
 //Part 2: forEach Loops // 
 // console.log(pokemonRepository.getAll()); instead
 pokemonRepository.getAll().forEach(function (pokemon) {
     
+    var newLi = document.createElement('li');
+    var newB = document.createElement('button');
+    var container = document.getElementById("container").getElementsByTagName("ul");
+    container.appendChild(newLi);
+    newLi.appendChild(newB);
+    newB.innerHTML = "Talonflame";
     
-
 });
