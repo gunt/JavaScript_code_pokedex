@@ -65,9 +65,9 @@ pokemonRepository.getAll().forEach(function (pokemon) {
     
     var newLi = document.createElement('li');
     var newB = document.createElement('button');
-    var container = document.getElementById("container").getElementsByTagName("ul");
-    container.appendChild(newLi);
+    // var main = document.getElementById("main").getElementsByTagName("ul");
+    main.appendChild(newLi);
     newLi.appendChild(newB);
     newB.innerHTML = "Talonflame";
-    
+
 });
