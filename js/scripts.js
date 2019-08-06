@@ -59,25 +59,32 @@ pokemonRepository.add({
 var $pokemonList = document.querySelector('.pokemon-list');
 
 
+function addListItem(pokemon, $pokemonContainer)
 
-//Part 2: forEach Loops // 
-// console.log(pokemonRepository.getAll()); instead
-pokemonRepository.getAll().forEach(function (pokemon) {
+var name = pokemon;
+
+var $listItem = document.createElement('li');
+
+//$element.classList.add('my-class'); // Adds the class if it isn't present yet
+//..specifically with classes, you shouldn’t use a dot in front of the class
+$listItem.classList.add('pokemonItem');
+
+//creating the button // &textButton
+var $button = document.createElement('button');
+var $buttonText = document.createTextNode(name);
+//append - button - text
+$button.appendChild($buttonText);
+// var $container = document.querySelector('.container');
+// var button = document.createElement('button');
+// button.innerText = "Click Me";
+// $container.appendChild(button);
+$
+
+
+// //Part 2: forEach Loops // 
+// // console.log(pokemonRepository.getAll()); instead
+// pokemonRepository.getAll().forEach(function (pokemon) {
     
-    var $newLi = document.createElement('li');
-    var $newB = document.createElement('button');
-    // var main = document.getElementById("main").getElementsByTagName("ul");
-    $newLi.setAttribute('class', 'pokemon-list__Li');
-    $newB.setAttribute('class', 'newLi__button');
-    $newLi.appendChild($newB);
-    $pokemonList.appendChild($newLi);
-    // $newB.innerText = pokemonRepository;
-    // $newB.addEventListener('click', function(event){
-    //     showDetails(event.target.innerText);
+    
 
-
-});
-
-// function showDetails(pokemonRepository){
-//     console.log(pokemonRepository)
 // });
