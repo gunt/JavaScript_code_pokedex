@@ -1,5 +1,6 @@
 // creating before anything else a new pokemonRepository variable
 //Step 2: is Inside no need to do it again. 
+
 var pokemonRepository = (function () {
     var repository = [
 
@@ -63,11 +64,20 @@ var $pokemonList = document.querySelector('.pokemon-list');
 // console.log(pokemonRepository.getAll()); instead
 pokemonRepository.getAll().forEach(function (pokemon) {
     
-    var newLi = document.createElement('li');
-    var newB = document.createElement('button');
+    var $newLi = document.createElement('li');
+    var $newB = document.createElement('button');
     // var main = document.getElementById("main").getElementsByTagName("ul");
-    main.appendChild(newLi);
-    newLi.appendChild(newB);
-    newB.innerHTML = "Talonflame";
+    $newLi.setAttribute('class', 'pokemon-list__Li');
+    $newB.setAttribute('class', 'newLi__button');
+    $newLi.appendChild($newB);
+    $pokemonList.appendChild($newLi);
+    // $newB.innerText = pokemonRepository;
+    // $newB.addEventListener('click', function(event){
+    //     showDetails(event.target.innerText);
+
 
 });
+
+// function showDetails(pokemonRepository){
+//     console.log(pokemonRepository)
+// });
