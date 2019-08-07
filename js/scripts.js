@@ -51,10 +51,11 @@ var pokemonRepository = (function () {
         //..specifically with classes, you shouldn’t use a dot in front of the class
         // $element.classList.add('my-class'); // Adds the class if it isn't present yet
 
-        $listItemElement.classList.add('pokemon-list__item')
+        $listItemElement.classList.add('pokemon-list__item');
+        $pokebutton.classList.add('button');
 
         // $listItemElement.setAttribute('class', 'pokemon-list__item');
-        $pokebutton.setAttribute('class', 'button'); // testing the class button default
+        //$pokebutton.setAttribute('class', 'button'); // testing the class button default
 
         //appendchild
         $listItemElement.appendChild($pokebutton);
@@ -69,17 +70,14 @@ var pokemonRepository = (function () {
 
     // show details function // console log // 
     function showDetails(pokemon) {
-        // var name = pokemon.name;
         console.log(pokemon);
     }
-
-
 
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
-        showDetails: showDetails
+        // showDetails: showDetails //not neccersary temporary for the next task
     };
 })();
 
