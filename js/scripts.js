@@ -29,6 +29,7 @@ var pokemonRepository = (function () {
     // organize the code according to task
     // Bonus task, inside the add function /// typeof parameter is an object with a conditional
 
+    
     function add(pokemon) {
 
         if (typeof repository === 'object') {
@@ -56,6 +57,13 @@ var pokemonRepository = (function () {
 
         // $listItemElement.setAttribute('class', 'pokemon-list__item');
         //$pokebutton.setAttribute('class', 'button'); // testing the class button default
+
+        // testingt adding images calling by ID
+        var img = document.createElement("img");
+        img.src = "img/favicon.ico";
+        var src = document.getElementById("Title");
+        src.appendChild(img);
+
 
         //appendchild
         $listItemElement.appendChild($pokebutton);
