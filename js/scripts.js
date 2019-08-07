@@ -58,7 +58,7 @@ var pokemonRepository = (function () {
         // $listItemElement.setAttribute('class', 'pokemon-list__item');
         //$pokebutton.setAttribute('class', 'button'); // testing the class button default
 
-        // testingt adding images calling by ID
+        // testing adding images calling by ID
         var img = document.createElement("img");
         img.src = "img/favicon.ico";
         var src = document.getElementById("Title");
@@ -71,7 +71,7 @@ var pokemonRepository = (function () {
 
         $pokebutton.innerText = pokemon.name;
         $pokebutton.addEventListener('click', function (event) {
-            showDetails(event.target.innerText);
+            console.log(pokemon.name);
         });
 
     }
