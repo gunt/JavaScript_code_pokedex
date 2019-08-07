@@ -4,19 +4,22 @@ var pokemonRepository = (function () {
         {
             name: "Talonflame",
             height: 3.11,
-            types: ['fire', 'flying']
+            types: ['fire', 'flying'],
+            image: ("img/favicon.ico")
         },
 
         {
             name: "Buzzwole",
             height: 7.10,
-            types: ['bug', 'fighting']
+            types: ['bug', 'fighting'],
+            // image: ("img/favicon.ico")
         },
 
         {
             name: "Entei",
             height: 6.11,
-            types: ['fire']
+            types: ['fire'],
+            // image: ("img/favicon.ico")
         },
 
     ];
@@ -59,10 +62,12 @@ var pokemonRepository = (function () {
         //$pokebutton.setAttribute('class', 'button'); // testing the class button default
 
         // testing adding images calling by ID
-        var img = document.createElement("img");
-        img.src = "img/favicon.ico";
-        var src = document.getElementById("Title");
-        src.appendChild(img);
+        // var img = document.createElement("img");
+        // img.src = "img/favicon.ico";
+        // var src = document.getElementById("Title");
+        // src.appendChild(img);
+
+        $('#pokemon-list ul').append('<li><img src="' + imgSrc[i] + '"/></li>');
 
 
         //appendchild
