@@ -156,8 +156,8 @@ button {
   color: white;
   text-decoration: none;
   padding: 17px;
-  border-radius: 17px;
-  border-bottom: 7px solid rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
 }
 
 button:hover,
@@ -212,7 +212,7 @@ button:focus {
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 60%;
   padding-left: 0px;
   margin: 0px;
 
@@ -223,9 +223,9 @@ button:focus {
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 60%;
   background-color: #FF4500;
-  margin-top: 15px;
+  margin-top: 7px;
   list-style-type: none;
 
 }
