@@ -1,6 +1,3 @@
-// creating before anything else a new pokemonRepository variable
-//Step 2: is Inside no need to do it again. 
-
 var pokemonRepository = (function () {
     var repository = [
 
@@ -33,7 +30,7 @@ var pokemonRepository = (function () {
     // Bonus task, inside the add function /// typeof parameter is an object with a conditional
 
     function add(pokemon) {
-        // document.write(typeof repository);
+
         if (typeof repository === 'object') {
             repository.push(pokemon)
         } else {
@@ -52,8 +49,12 @@ var pokemonRepository = (function () {
 
         //$element.classList.add('my-class'); // Adds the class if it isn't present yet
         //..specifically with classes, you shouldn’t use a dot in front of the class
-        $listItemElement.setAttribute('class', 'pokemon-list__item')
-        $pokebutton.setAttribute('class', 'button') // testing the class button default
+        // $element.classList.add('my-class'); // Adds the class if it isn't present yet
+
+        $listItemElement.classList.add('pokemon-list__item')
+
+        // $listItemElement.setAttribute('class', 'pokemon-list__item');
+        $pokebutton.setAttribute('class', 'button'); // testing the class button default
 
         //appendchild
         $listItemElement.appendChild($pokebutton);
@@ -82,6 +83,7 @@ var pokemonRepository = (function () {
     };
 })();
 
+// variable change = short variable
 var Pokemons = pokemonRepository.getAll();
 
 Pokemons.forEach(function (pokemon) {
