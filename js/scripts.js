@@ -1,38 +1,9 @@
 var pokemonRepository = (function () {
-    var repository = [
+    var repository = [];
+    var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=50';
 
-        {
-            name: "Talonflame",
-            height: 3.11,
-            types: ['fire', 'flying'],
-            image: ("img/favicon.ico")
-        },
 
-        {
-            name: "Buzzwole",
-            height: 7.10,
-            types: ['bug', 'fighting'],
-            // image: ("img/favicon.ico")
-        },
 
-        {
-            name: "Entei",
-            height: 6.11,
-            types: ['fire'],
-            // image: ("img/favicon.ico")
-        },
-
-    ];
-
-    function getAll() {
-        return repository;
-    }
-
-    // recode - wrap your code to a IIFE // the same but with the clean code // last paragraph
-    // organize the code according to task
-    // Bonus task, inside the add function /// typeof parameter is an object with a conditional
-
-    
     function add(pokemon) {
 
         if (typeof repository === 'object') {
@@ -42,6 +13,12 @@ var pokemonRepository = (function () {
         }
 
     }
+
+    function getAll() {
+        return repository;
+    }
+
+
 
     function addListItem(pokemon) {
 
@@ -59,15 +36,7 @@ var pokemonRepository = (function () {
         $pokebutton.classList.add('button');
 
         // $listItemElement.setAttribute('class', 'pokemon-list__item');
-        //$pokebutton.setAttribute('class', 'button'); // testing the class button default
-
-        // testing adding images calling by ID
-        // var img = document.createElement("img");
-        // img.src = "img/favicon.ico";
-        // var src = document.getElementById("Title");
-        // src.appendChild(img);
-
-        $('#pokemon-list ul').append('<li><img src="' + imgSrc[i] + '"/></li>');
+        // $pokebutton.setAttribute('class', 'button'); // testing the class button default
 
 
         //appendchild
@@ -81,22 +50,63 @@ var pokemonRepository = (function () {
 
     }
 
-    // show details function // console log // 
-    function showDetails(pokemon) {
-        console.log(pokemon);
+    function loadList() {
+        return fetch(apiUrl).then(function (response) {
+            return response.json();
+        }).then(function (json) {
+            json.results.forEach(function (item) {
+                var pokemon = {
+                    name: item.name,
+                    detailsUrl: item.url
+                };
+                add(pokemon);
+            });
+        }).catch(function (e) {
+            console.error(e);
+        })
     }
+
+    function loadDetails(item) {
+        var url = item.detailsUrl;
+        return fetch(url).then(function (response) {
+            return response.json();
+        }).then(function (details) {
+            // Now we add the details to the item
+            item.imageUrl = details.sprites.front_default;
+            item.height = details.height;
+            item.types = Object.keys(details.types);
+        }).catch(function (e) {
+            console.error(e);
+        });
+    }
+
+    // // show details function // console log // 
+    // function showDetails(pokemon) {
+    //     console.log(pokemon);
+    // }
+
+
 
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
-        // showDetails: showDetails //not neccersary temporary for the next task
+        loadList: loadList,
+        loadDetails: loadDetails,
+        //  showDetails: showDetails //not neccersary temporary for the next task
     };
 })();
 
-// variable change = short variable
-var Pokemons = pokemonRepository.getAll();
 
-Pokemons.forEach(function (pokemon) {
-    pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function () {
+    // Now the data is loaded!
+    pokemonRepository.getAll().forEach(function (pokemon) {
+        pokemonRepository.addListItem(pokemon);
+    });
 });
+
+function showDetails(pokemon) {
+    pokemonRepository.loadDetails(pokemon).then(function () {
+        console.log(pokemon);
+    });
+}
