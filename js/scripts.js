@@ -80,10 +80,45 @@ var pokemonRepository = (function () {
         });
     }
 
-    // // show details function // console log // 
-    // function showDetails(pokemon) {
-    //     console.log(pokemon);
-    // }
+    
+    // Creating showModal Function - Content 
+    function showModal(item) {
+        var $modalContainer = document.querySelector('#modal-container');
+        // var dialogPromiseReject; // This can be set later, by showDialog
+        
+
+          // Clear all existing modal content
+          $modalContainer.innerHTML = '';
+          
+          var modal = document.createElement('div');
+          modal.classList.add('modal');
+          
+          // Add the new modal content
+          var closeButtonElement = document.createElement('button');
+          closeButtonElement.classList.add('modal-close');
+          closeButtonElement.innerText = 'Close';
+          closeButtonElement.addEventListener('click', hideModal);
+          
+          var titleElement = document.createElement('h1');
+          titleElement.innerText = item.name;
+          
+          var contentElement = document.createElement('p');
+          contentElement.innerText = text;
+          
+          var contentElement = document.createElement('p');
+          contentElement.innerText = text;
+
+          
+          
+          modal.appendChild(closeButtonElement);
+          modal.appendChild(titleElement);
+          modal.appendChild(contentElement);
+          $modalContainer.appendChild(modal);
+          
+          $modalContainer.classList.add('is-visible');
+        }
+
+
 
 
 
@@ -105,8 +140,9 @@ pokemonRepository.loadList().then(function () {
     });
 });
 
-function showDetails(pokemon) {
-    pokemonRepository.loadDetails(pokemon).then(function () {
-        console.log(pokemon);
+function showDetails(item) {
+    pokemonRepository.loadDetails(item).then(function () {
+        // console.log(pokemon);  // instead of console.log // show in modal
+        showModal(item);
     });
 }
