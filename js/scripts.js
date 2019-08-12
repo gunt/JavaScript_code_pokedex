@@ -80,70 +80,73 @@ var pokemonRepository = (function () {
         });
     }
 
-    
+
     // Creating showModal Function - Content 
     function showModal(item) {
         var $modalContainer = document.querySelector('#modal-container');
         // var dialogPromiseReject; // This can be set later, by showDialog
-        
 
-          // Clear all existing modal content
-          $modalContainer.innerHTML = '';
-          
-          var modal = document.createElement('div');
-          modal.classList.add('modal');
-          
-          // Add the new modal content
-          var closeButtonElement = document.createElement('button');
-          closeButtonElement.classList.add('modal-close');
-          closeButtonElement.innerText = 'Close';
-          closeButtonElement.addEventListener('click', hideModal);
-          
 
-          //creating modal display name, height, image
-          var nameElement = document.createElement('h1');
-          nameElement.innerText = item.name;
-          
-          var heightElement = document.createElement('p');
-          heightElement.innerText = 'height : ' + item.height;
-          
-          var imageElement = document.createElement('img');
-          imageElement.classList.add('modal-img')   // class image poke
-          imageElement.setAttribute('scr', item.imageUrl);
+        // Clear all existing modal content
+        $modalContainer.innerHTML = '';
 
-          // appending modals & add class modal
-          modal.appendChild(closeButtonElement);
-          modal.appendChild(nameElement);
-          modal.appendChild(heightElement);
-          $modalContainer.appendChild(modal);
-          $modalContainer.classList.add('is-visible');
+        var modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        // Add the new modal content
+        var closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innerText = 'Close';
+        closeButtonElement.addEventListener('click', hideModal);
+
+
+        //creating modal display name, height, image
+        var nameElement = document.createElement('h1');
+        nameElement.innerText = item.name;
+
+        var heightElement = document.createElement('p');
+        heightElement.innerText = 'height : ' + item.height;
+
+        var imageElement = document.createElement('img');
+        imageElement.classList.add('modal-img') // class image poke
+        imageElement.setAttribute('scr', item.imageUrl);
+
+        var typesElement = document.createElement('p');
+        typesElement.innerText = 'type : ' + item.types;
+
+        // appending modals & add class modal
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(nameElement);
+        modal.appendChild(heightElement);
+        modal.appendChild(imageElement);
+        modal.appendChild(typesElement);
+        $modalContainer.appendChild(modal);
+        $modalContainer.classList.add('is-visible');
+    }
+
+    function hideModal() {
+        var $modalContainer = document.querySelector('#modal-container');
+        $modalContainer.classList.remove('is-visible');
+    }
+
+
+    window.addEventListener('keydown', (e) => {
+        var $modalContainer = document.querySelector('#modal-container');
+        if (e.key === 'Escape' && $modalContainer.classList.contains('is-visible')) {
+            hideModal();
         }
+    });
 
-        function hideModal() {
-            var $modalContainer = document.querySelector('#modal-container');
-            $modalContainer.classList.remove('is-visible');
-          }
-          
-
-          window.addEventListener('keydown', (e) => {
-            var $modalContainer = document.querySelector('#modal-container');
-            if (e.key === 'Escape' && $modalContainer.classList.contains('is-visible')) {
-              hideModal();  
-            }
-          });
-
-        //   modal via clicking outside of it, instead directly on the overlay
-            $modalContainer.addEventListener('click', (e) => {
-            // Since this is also triggered when clicking INSIDE the modal container,
-            // We only want to close if the user clicks directly on the overlay
-            var target = e.target;
-            if (target === $modalContainer) {
-              hideModal();
-            }
-          });
-
-
-
+    //   modal via clicking outside of it, instead directly on the overlay
+    var $modalContainer = document.querySelector('#modal-container');
+    $modalContainer.addEventListener('click', (e) => {
+        // Since this is also triggered when clicking INSIDE the modal container,
+        // We only want to close if the user clicks directly on the overlay
+        var target = e.target;
+        if (target === $modalContainer) {
+            hideModal();
+        }
+    });
 
 
     return {
@@ -152,7 +155,9 @@ var pokemonRepository = (function () {
         addListItem: addListItem,
         loadList: loadList,
         loadDetails: loadDetails,
-        //  showDetails: showDetails //not neccersary temporary for the next task
+        showModal: showModal,
+        hideModal: hideModal,
+        showDetails: showDetails //not neccersary temporary for the next task
     };
 })();
 
