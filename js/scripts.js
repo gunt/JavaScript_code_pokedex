@@ -99,24 +99,48 @@ var pokemonRepository = (function () {
           closeButtonElement.innerText = 'Close';
           closeButtonElement.addEventListener('click', hideModal);
           
-          var titleElement = document.createElement('h1');
-          titleElement.innerText = item.name;
-          
-          var contentElement = document.createElement('p');
-          contentElement.innerText = text;
-          
-          var contentElement = document.createElement('p');
-          contentElement.innerText = text;
 
+          //creating modal display name, height, image
+          var nameElement = document.createElement('h1');
+          nameElement.innerText = item.name;
           
+          var heightElement = document.createElement('p');
+          heightElement.innerText = 'height : ' + item.height;
           
+          var imageElement = document.createElement('img');
+          imageElement.classList.add('modal-img')   // class image poke
+          imageElement.setAttribute('scr', item.imageUrl);
+
+          // appending modals & add class modal
           modal.appendChild(closeButtonElement);
-          modal.appendChild(titleElement);
-          modal.appendChild(contentElement);
+          modal.appendChild(nameElement);
+          modal.appendChild(heightElement);
           $modalContainer.appendChild(modal);
-          
           $modalContainer.classList.add('is-visible');
         }
+
+        function hideModal() {
+            var $modalContainer = document.querySelector('#modal-container');
+            $modalContainer.classList.remove('is-visible');
+          }
+          
+
+          window.addEventListener('keydown', (e) => {
+            var $modalContainer = document.querySelector('#modal-container');
+            if (e.key === 'Escape' && $modalContainer.classList.contains('is-visible')) {
+              hideModal();  
+            }
+          });
+
+        //   modal via clicking outside of it, instead directly on the overlay
+            $modalContainer.addEventListener('click', (e) => {
+            // Since this is also triggered when clicking INSIDE the modal container,
+            // We only want to close if the user clicks directly on the overlay
+            var target = e.target;
+            if (target === $modalContainer) {
+              hideModal();
+            }
+          });
 
 
 
