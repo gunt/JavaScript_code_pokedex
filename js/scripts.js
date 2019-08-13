@@ -82,29 +82,55 @@ var modalElements = (function() {
         // Clear all existing modal content
       $modalContainer.innerHTML = '';
       
-      var modal = document.createElement('div');
-      modal.classList.add('modal');
+      var $modal = document.createElement('div');
+      $modal.classList.add('modal');
       
       // Add the new modal content
-      var closeButtonElement = document.createElement('button');
-      closeButtonElement.classList.add('modal-close');
-      closeButtonElement.innerText = 'Close';
-      closeButtonElement.addEventListener('click', hideModal);
+      var $closeButtonElement = document.createElement('button');
+      $closeButtonElement.classList.add('modal-close');
+      $closeButtonElement.innerText = 'Close';
+      $closeButtonElement.addEventListener('click', hideModal);
       
       // rearranging display in modalContainer
-      var titleElement = document.createElement('h1');
-      titleElement.innerText = name;
+      var $titleElement = document.createElement('h1');
+      $titleElement.innerText = name;
       
-      var contentElement = document.createElement('p');
-      contentElement.innerText = text;
+      var $imageElement = document.createElement('p');
+      $imageElement.setAttribute('src', imageUrl);
       
-      modal.appendChild(closeButtonElement);
-      modal.appendChild(titleElement);
-      modal.appendChild(contentElement);
-      $modalContainer.appendChild(modal);
+      var $contentElement = document.createElement('p');
+      $contentElement.innerText = 'Height' + height;
       
+      $modal.appendChild($closeButtonElement);
+      $modal.appendChild($titleElement);
+      $modal.appendChild($imageElement);
+      $modal.appendChild($contentElement);
+      $modalContainer.appendChild($modal);
+
+      $modalContainer.addEventListener('click', function(e)  {
+        // Since this is also triggered when clicking INSIDE the modal container,
+        // We only want to close if the user clicks directly on the overlay
+        var target = e.target;
+        if (target === $modalContainer) {
+          hideModal();
+        }
+      });
+
       $modalContainer.classList.add('is-visible');
     }
+
+    function hideModal() {
+        $modalContainer.classList.remove('is-visible');
+        
+        if (dialogPromiseReject) {
+          dialogPromiseReject();
+          dialogPromiseRejct = null;
+        }
+      }
+
+      
+
+
 
 
 
