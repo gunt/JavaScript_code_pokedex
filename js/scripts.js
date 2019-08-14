@@ -1,7 +1,7 @@
 
 var pokemonRepository = (function () {
     var repository = [];
-    var apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
+    var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=50';
 
     function loadList() {
         return fetch(apiUrl).then(function (response) {
@@ -84,7 +84,7 @@ var pokemonRepository = (function () {
  
     function showModal(pokemon) {
       
-        var $modalContainer = document.querySelector('#modal-container');
+        //var $modalContainer = document.querySelector('#modal-container');
       
       
         // Clear all existing modal content
@@ -119,7 +119,7 @@ var pokemonRepository = (function () {
     }
 
     function hideModal() {
-        var $modalContainer = document.querySelector('#modal-container');
+        //var $modalContainer = document.querySelector('#modal-container');
         $modalContainer.classList.remove('is-visible');
       }
 
