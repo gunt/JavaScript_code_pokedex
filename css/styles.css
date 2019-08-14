@@ -29,7 +29,7 @@ body {
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height);
-  background-color: #2E333B;
+  background-color: rgb(45, 59, 80);
   color: #ffffff;
 }
 
@@ -208,6 +208,14 @@ button:focus {
   }
 }
 
+/* .pokemonContainer {
+  width: 100%;
+  max-width: 700px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 15px 10px;
+} */
+
 .pokemon-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -232,6 +240,62 @@ button:focus {
 .pokemon-list__item:first-child {
   margin-top: 0px;
 
+}
+
+#modal-container {
+  /* display: none; */
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  
+  /* to show it above other content */
+  z-index: 999; 
+  
+  /* to allow scrolling if the screen is not high enough*/
+  overflow: auto; 
+  
+  /* this is used to center the modal */
+  display: none;
+  text-align: center;
+}
+
+#modal-container.is-visible {
+ display: grid;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: rgb(55, 64, 92);
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+}
+
+.modal h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.modal p {
+  margin-bottom: 0;
+  text-align: center;
 }
 
 @keyframes color-change {
