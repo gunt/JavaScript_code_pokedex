@@ -123,15 +123,6 @@ var pokemonRepository = (function () {
         $modalContainer.classList.remove('is-visible');
       }
 
-    //   window.addEventListener('keydown', (e) => {
-    //     var $modalContainer = document.querySelector('#modal-container');
-    //     // if the user presses the ESC key the modal should be hidden if it is already not
-    //     if (e.key === 'Escape' && $modalContainer.classList.contains('isVisible')
-    //     ){
-    //       hideModal();  
-    //     }
-    //   });
-
 
       window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && $modalContainer.classList.contains('is-visible')) {
