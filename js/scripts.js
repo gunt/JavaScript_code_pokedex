@@ -1,3 +1,4 @@
+(function () {
 var pokemonRepository = (function () {
     var repository = [];
     var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=50';
@@ -160,3 +161,4 @@ pokemonRepository.loadList().then(function () {
         pokemonRepository.addListItem(pokemon);
     });
 });
+})();
