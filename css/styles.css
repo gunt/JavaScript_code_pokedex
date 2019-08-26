@@ -93,10 +93,12 @@ h3 {
   border-radius: 50%;
 }
 
-#pokeH-style {
-  color: #4cff00;
-  font-weight: 980;
-  font-style: italic;
+#pokemonimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: auto;
 }
 
 /* Styling Header Navigation */
@@ -243,8 +245,12 @@ button:focus {
 }
 
 #modal-container {
-  /* display: none; */
-  position: fixed;
+  display: none;
+}
+
+#modal-container.is-visible {
+ display: grid;
+ position: fixed;
   padding: 20px;
   box-sizing: border-box;
   top: 0;
@@ -260,12 +266,7 @@ button:focus {
   overflow: auto; 
   
   /* this is used to center the modal */
-  display: none;
   text-align: center;
-}
-
-#modal-container.is-visible {
- display: grid;
 }
 
 .modal {
