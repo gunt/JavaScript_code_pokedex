@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 (function () {
 var pokemonRepository = (function () {
     var repository = [];
